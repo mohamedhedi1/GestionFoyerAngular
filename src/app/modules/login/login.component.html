@@ -12,21 +12,20 @@
                 <div class="mb-4">
                     <i class="feather icon-unlock auth-icon"></i>
                 </div>
-                <form > <!-- (ngSubmit)="authenticate()" -->
+                <form (ngSubmit)="authenticate()">
                 
                 <h3 class="mb-4">Login</h3>
                 <div class="input-group mb-3">
-                <!--    <input type="email" class="form-control" placeholder="Email" required [(ngModel)]="authRequest.email" name="email"> -->
+                    <input type="email" class="form-control" placeholder="Email" required [(ngModel)]="authRequest.email" name="email">
                 </div>
                 <div class="input-group mb-4">
-                 <!--     <input type="password" class="form-control" placeholder="password" required [(ngModel)]="authRequest.password" name="password"> -->
+                    <input type="password" class="form-control" placeholder="password" required [(ngModel)]="authRequest.password" name="password">
                 </div>
                 
                 <button class="btn btn-primary shadow-2 mb-4" type="submit">Login</button>
-            
+                <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
                 </form>
-             <!-- <p class="mb-2 text-muted">Forgot password? <a href="/resetpassword">Reset</a></p>
-                <p class="mb-0 text-muted">Don’t have an account? <a routerLink="/register">Signup</a></p> -->  
+
             </div>
         </div>
     </div> 

@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 import { Etudiant } from 'src/app/core/models/etudiant';
 import { CoreService } from 'src/app/core/services/core.service';
 import { EtudiantService } from 'src/app/core/services/etudiant.service';
@@ -22,7 +23,7 @@ export class ListEtudiantComponent implements OnInit{
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private _etudiantService: EtudiantService,private _coreService: CoreService)
+  constructor(private router:Router,private _etudiantService: EtudiantService,private _coreService: CoreService)
   {}
 
 
@@ -44,6 +45,11 @@ export class ListEtudiantComponent implements OnInit{
       }
     )
 
+  }
+
+  onEditClick(id: number) {
+    
+    this.router.navigate(['/etudiants/update/'+id]);
   }
 
   deleteEtudiant(id : number)

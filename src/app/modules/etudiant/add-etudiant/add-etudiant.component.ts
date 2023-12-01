@@ -14,8 +14,8 @@ export class AddEtudiantComponent {
   constructor(private fb: FormBuilder,private _etudiantService: EtudiantService,private router: Router) {
     this.myForm = this.fb.group({
      
-     nom: ['', [Validators.pattern('[A-Za-z]+'), Validators.required]],
-      prenom: ['', [Validators.pattern('[A-Za-z]+'), Validators.required]],
+      nomEt: ['', [Validators.pattern('[A-Za-z]+'), Validators.required]],
+      prenomEt: ['', [Validators.pattern('[A-Za-z]+'), Validators.required]],
       cin: ['', [Validators.pattern('[0-9]{8}'), Validators.required]],
       email: ['', [Validators.email]],
       ecole: ['',[Validators.pattern('[A-Za-z]+'), Validators.required]],
@@ -39,9 +39,10 @@ export class AddEtudiantComponent {
 
  
     onSubmit() {
-
+      console.log(this.myForm.value)
       this._etudiantService.addEtudiant(this.myForm.value)
         .subscribe(response => {
+          
           this.router.navigate(['/etudiants']);
         }, error => {
           console.error('Erreur lors de l\'ajout de l\'étudiant:', error);

@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { EtudiantRoutingModule } from './etudiant-routing.module';
-import { ListEtudiantComponent } from './list-etudiant/list-etudiant.component';
-import { AddEtudiantComponent } from './add-etudiant/add-etudiant.component';
+import { UserRoutingModule } from './user-routing.module';
+import { ListUserComponent } from './list-user/list-user.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
@@ -15,17 +14,15 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { UpdateEtudiantComponent } from './update-etudiant/update-etudiant.component';
+
+
 @NgModule({
   declarations: [
-    ListEtudiantComponent,
-    AddEtudiantComponent,
-    UpdateEtudiantComponent
-
+    ListUserComponent
   ],
   imports: [
     CommonModule,
-    EtudiantRoutingModule,
+    UserRoutingModule,
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
@@ -36,7 +33,7 @@ import { UpdateEtudiantComponent } from './update-etudiant/update-etudiant.compo
     MatSnackBarModule,
     ReactiveFormsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ]
 })
-export class EtudiantModule { }
+export class UserModule { }
