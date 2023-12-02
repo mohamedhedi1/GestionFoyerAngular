@@ -9,7 +9,7 @@ export class UserService {
 
   constructor(private _http: HttpClient) { }
 
-  getAllUsers()
+  getAllUsers():any
   {
     return this._http.get(this.URL);
   }
