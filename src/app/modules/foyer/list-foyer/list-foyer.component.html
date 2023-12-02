@@ -1,0 +1,112 @@
+<body>
+  <!-- [ Pre-loader ] start -->
+  <div class="loader-bg">
+      <div class="loader-track">
+          <div class="loader-fill"></div>
+      </div>
+  </div>
+  <!-- [ Pre-loader ] End -->
+
+  <!-- [ navigation menu ] start -->
+
+  <!-- [ navigation menu ] end -->
+
+
+  <!-- [ Header ] end -->
+
+  <!-- [ Main Content ] start -->
+  <section class="pcoded-main-container">
+      <div class="pcoded-wrapper">
+          <div class="pcoded-content">
+              <div class="pcoded-inner-content">
+                  <!-- [ breadcrumb ] start -->
+                  <div class="page-header">
+                      <div class="page-block">
+                          <div class="row align-items-center">
+                              <div class="col-md-12">
+                                  <div class="page-header-title">
+                                      <h5 class="m-b-10">Bootstrap Basic Tables</h5>
+                                  </div>
+                                  <ul class="breadcrumb">
+                                      <li class="breadcrumb-item"><a href="index.html"><i class="feather icon-home"></i></a></li>
+                                      <li class="breadcrumb-item"><a href="#!">Tables</a></li>
+                                      <li class="breadcrumb-item"><a href="javascript:">Basic Tables</a></li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- [ breadcrumb ] end -->
+                  <div class="main-body">
+                      <div class="page-wrapper">
+                          <!-- [ Main Content ] start -->
+                          <div class="row">
+                        
+                              <!-- [ Hover-table ] start -->
+                              <div class="col-xl-12">
+                                  <div class="card">
+                                      <div class="card-header">
+                                          <h5>Hover Table</h5>
+                                          <span class="d-block m-t-5">use class <code>table-hover</code> inside table element</span>
+                                      </div>
+                                      <div class="card-block table-border-style">
+                                          <div class="table-responsive">
+                                              <table class="table table-hover">
+                                                  <thead>
+                                                      <tr>
+                                                          <th>#</th>
+                                                          <th>Nom Foyer</th>
+                                                          <th>Capacité </th>
+                                                          <th>Université</th>
+                                                          <th>Action</th>
+                                                      </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                 
+                                                      <tr *ngFor="let item of data; let i = index">
+                                                          <th scope="row">1</th>
+                                                          <td>{{item.nomFoyer}}</td>
+                                                          <td>{{item.capaciteFoyer}}</td>
+                                                          <td>{{item.universite}}</td>
+                                                          <td>
+                                                            <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" [routerLink]="['updateFoyer', item.idFoyer]">
+                                                              <i class="fa fa-edit"></i>
+                                                            </button>
+                                                          </td>
+                                                          <td>
+                                                            <button type="button" class="remove" (click)="deleteFoyer(item.idFoyer)">
+                                                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                                                class="bi bi-trash" viewBox="0 0 16 16">
+                                                                <path
+                                                                  d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z" />
+                                                                <path
+                                                                  d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z" />
+                                                              </svg>
+                                                            </button>
+                                                          </td>
+                                                      </tr>
+                                                    
+                                                  </tbody>
+                                              </table>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <!-- [ Hover-table ] end -->
+
+                          </div>
+                          <!-- [ Main Content ] end -->
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+
+  <!-- Required Js -->
+<script src="assets/js/vendor-all.min.js"></script>
+<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/js/pcoded.min.js"></script>
+
+</body>
