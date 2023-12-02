@@ -13,18 +13,19 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+//import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UpdateEtudiantComponent } from './update-etudiant/update-etudiant.component';
-import { NavbarComponent } from '../navbar/navbar.component';
-import { SidebarComponent } from '../sidebar/sidebar.component';
+
 import { SharedModule } from '../shared/shared.module';
+
 
 @NgModule({
   declarations: [
     ListEtudiantComponent,
     AddEtudiantComponent,
     UpdateEtudiantComponent,
+    
     
 
   ],

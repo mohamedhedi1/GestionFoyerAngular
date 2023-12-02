@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class UserService {
   URL="http://localhost:9090/users"
+  URL2="http://localhost:9090/authenticate/register"
 
   constructor(private _http: HttpClient) { }
 
@@ -18,5 +19,11 @@ export class UserService {
   {
     return this._http.delete(this.URL+'/'+id);
   }
+  addUser(user:any)
+  {
+    return this._http.post(this.URL2,user);
+  }
+
+
 
 }

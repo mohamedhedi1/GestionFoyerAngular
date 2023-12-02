@@ -11,15 +11,17 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { HttpClientModule } from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+//import { HttpClientModule } from '@angular/common/http';
+//import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
+import { AddUserComponent } from './add-user/add-user.component';
 
 
 @NgModule({
   declarations: [
-    ListUserComponent
+    ListUserComponent,
+    AddUserComponent
   ],
   imports: [
     CommonModule,
