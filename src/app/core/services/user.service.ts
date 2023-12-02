@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +24,16 @@ export class UserService {
   {
     return this._http.post(this.URL2,user);
   }
+  findStudentIdByEmail(email:string)
+  {
+    return this._http.get(this.URL+"/findStudentIdByEmail/"+email);
+  }
+
+  getUser(email: any)
+  {
+    return this._http.get<User>(this.URL+"/UserByEmail/"+email)
+  }
+  
 
 
 

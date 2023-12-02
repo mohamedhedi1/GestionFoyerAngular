@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './modules/navbar/navbar.component';
 import { SidebarComponent } from './modules/sidebar/sidebar.component';
+import { HomeComponent } from './modules/home/home.component';
 
 
 
@@ -19,6 +20,7 @@ import { SidebarComponent } from './modules/sidebar/sidebar.component';
     AppComponent,
     LoginComponent,
     NotFoundComponent,
+    HomeComponent,
 
     
   

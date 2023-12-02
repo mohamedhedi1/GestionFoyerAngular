@@ -16,12 +16,14 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 import { AddUserComponent } from './add-user/add-user.component';
+import { UpdateUserComponent } from './update-user/update-user.component';
 
 
 @NgModule({
   declarations: [
     ListUserComponent,
-    AddUserComponent
+    AddUserComponent,
+    UpdateUserComponent
   ],
   imports: [
     CommonModule,

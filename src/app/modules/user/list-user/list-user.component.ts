@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 import { CoreService } from 'src/app/core/services/core.service';
 import { UserService } from 'src/app/core/services/user.service';
 
@@ -21,7 +22,7 @@ export class ListUserComponent implements OnInit{
   @ViewChild(MatSort) sort!: MatSort;
 
 
-  constructor(private _userService: UserService,private _coreService: CoreService)
+  constructor(private _userService: UserService,private _coreService: CoreService,private router:Router)
   {}
 
 
@@ -59,6 +60,28 @@ export class ListUserComponent implements OnInit{
 
       }
     )
+  }
+
+  
+  onEditClick(id: number,role:any,email:string) {
+    console.log(role)
+    if (role === "ETUDIANT") {
+      this._userService.findStudentIdByEmail(email).subscribe(
+        (res) => {
+          console.log(res);
+          this.router.navigate(['/etudiants/update/'+res]);
+        },
+        (err) => {
+          console.log(err);
+        }
+      );
+    }else{
+      this.router.navigate(['/users/update/'+id]);
+
+    }
+    //this.router.navigate(['/etudiants/update/'+id]);
+    
+  //  this.router.navigate(['/etudiants/update/'+id]);
   }
 
     
