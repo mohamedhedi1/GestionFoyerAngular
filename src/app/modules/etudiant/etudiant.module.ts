@@ -16,11 +16,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UpdateEtudiantComponent } from './update-etudiant/update-etudiant.component';
+import { NavbarComponent } from '../navbar/navbar.component';
+import { SidebarComponent } from '../sidebar/sidebar.component';
+import { SharedModule } from '../shared/shared.module';
+
 @NgModule({
   declarations: [
     ListEtudiantComponent,
     AddEtudiantComponent,
-    UpdateEtudiantComponent
+    UpdateEtudiantComponent,
+    
 
   ],
   imports: [
@@ -36,7 +41,9 @@ import { UpdateEtudiantComponent } from './update-etudiant/update-etudiant.compo
     MatSnackBarModule,
     ReactiveFormsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule
+   
   ]
 })
 export class EtudiantModule { }
