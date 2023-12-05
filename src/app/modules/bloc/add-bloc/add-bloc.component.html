@@ -1,0 +1,55 @@
+<body>
+  <div class="pcoded-main-container">
+    <div class="pcoded-wrapper">
+      <div class="pcoded-content">
+        <div class="pcoded-inner-content">
+          <div class="main-body">
+            <div class="page-wrapper">
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="card">
+                    <div class="card-header">
+                      <h5>Basic Component</h5>
+                    </div>
+                    <div class="card-body">
+                      <h5>Form controls</h5>
+                      <hr>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <form #addForm='ngForm' (ngSubmit)="add(addForm)">
+                            <div class="form-group">
+                              <label for="foyer">Foyer</label>
+                              <select class="form-control" id="foyer" name="foyer" ngModel #fn="ngModel">
+                                <option *ngFor="let foyer of foyers" [value]="foyer.idFoyer">
+                                  {{ foyer.nomFoyer }}
+                                </option>
+                              </select>
+                            </div>
+                            <div class="form-group">
+                              <label for="nom">Nom Bloc :</label>
+                              <input type="text" class="form-control" id="nom" name="nom" ngModel #fn="ngModel" required
+                                placeholder="Tapez le nom" autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                              <label for="capacite">Capacité Bloc :</label>
+                              <input type="number" class="form-control" id="capacite" name="capacite" ngModel
+                                #fn="ngModel" required placeholder="Capacité">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="assets/js/vendor-all.min.js"></script>
+  <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/js/pcoded.min.js"></script>
+</body>
