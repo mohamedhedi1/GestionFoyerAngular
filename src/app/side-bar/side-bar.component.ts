@@ -8,12 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class SideBarComponent implements OnInit {
 
   constructor() { }
-  blocDropdownVisible: boolean = false;
+  foyerDropdownVisible: boolean = false;
 
-  toggleBlocDropdown() {
-    this.blocDropdownVisible = !this.blocDropdownVisible;
+  toggleFoyerDropdown() {
+    this.foyerDropdownVisible = !this.foyerDropdownVisible;
   }
-
   ngOnInit() {
   }
+
 }
