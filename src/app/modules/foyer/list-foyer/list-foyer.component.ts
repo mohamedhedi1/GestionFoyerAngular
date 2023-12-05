@@ -10,32 +10,36 @@ import { FoyerService } from 'src/app/core/services/foyerService/foyer.service';
   styleUrls: ['./list-foyer.component.css']
 })
 export class ListFoyerComponent implements OnInit {
-  data: Foyer[]=[];
+  data: Foyer[] = [];
   constructor(private route: ActivatedRoute,
     private router: Router,
     private formB: FormBuilder,
-  private foyerService:FoyerService,) { }
+    private foyerService: FoyerService,) { }
 
   ngOnInit() {
-   
-       this.foyerService.getall().subscribe(
-         (data: Foyer []) => {
-           console.log(data);
-            this.data=data;
-         }),
-         (error: any) => {
-           console.error('Error fetching user by ID:', error);
-         }
-    
-   }
-   deleteFoyer(id :number){
+
+    this.foyerService.getall().subscribe(
+      (data: Foyer[]) => {
+        console.log(data);
+        this.data = data;
+      }),
+      (error: any) => {
+        console.error('Error fetching user by ID:', error);
+      }
+    this.foyerService.getall().subscribe((data) => {
+      this.totalFoyers = data.length;
+    });
+  }
+  deleteFoyer(id: number) {
     this.foyerService.deleteFoyer(id).subscribe(
       (response) => {
         alert('User deleted Successfully!');
-       
+
         this.router.navigate(['listFoyer']);
-  
+
       },
     )
-   }
+  }
+  totalFoyers!: number;
+
 }

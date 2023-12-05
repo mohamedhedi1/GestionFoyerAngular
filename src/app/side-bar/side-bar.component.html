@@ -11,41 +11,42 @@
       </div>
       <div class="navbar-content scroll-div">
           <ul class="nav pcoded-inner-navbar">
-              <li class="nav-item pcoded-menu-caption">
-                  <label>Navigation</label>
+
+              <!-- Dashboard -->
+              <li class="nav-item">
+                  <a href="index.html" class="nav-link">
+                      <span class="pcoded-micon"><i class="feather icon-home"></i></span>
+                      <span class="pcoded-mtext">Dashboard</span>
+                  </a>
               </li>
-              <li data-username="dashboard Default Ecommerce CRM Analytics Crypto Project" class="nav-item active">
-                  <a href="index.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Dashboard</span></a>
-              </li>
-              
+
+              <!-- Forms & Table Section -->
               <li class="nav-item pcoded-menu-caption">
                   <label>Forms & table</label>
               </li>
-             <!--<li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
-                  <a  class="nav-link " routerLink='mainFoyer'>Foyer</a>
-              </li> --!-->
+
+              <!-- Foyer Dropdown -->
               <li class="nav-item" (click)="toggleFoyerDropdown()">
-                <a href="#" class="nav-link">
-                  <label>Foyer</label>
-                  <i class="fas fa-angle-right right"></i>
-                </a>
-                <ul class="nav-dropdown" [style.display]="foyerDropdownVisible ? 'block' : 'none'">
-                  <li class="nav-item">
-                    <a class="nav-link" routerLink="mainFoyer/addFoyer">
-                      <label>Add</label>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" routerLink="mainFoyer/listFoyer">
-                      <label>List</label>
-                    </a>
-                  </li>
-                </ul>
+                  <a class="nav-item dropdown-toggle">
+                      <span><i class="bi bi-house-heart"></i>Foyer</span>
+                    
+                  </a>
+                  <ul class="nav-dropdown" [style.display]="foyerDropdownVisible ? 'block' : 'none'" style="width: 250px;">
+                      <li class="nav-item">
+                          <a class="nav-link" routerLink="mainFoyer/addFoyer">
+                              <span>Add</span>
+                          </a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" routerLink="mainFoyer/listFoyer">
+                              <span>List</span>
+                          </a>
+                      </li>
+                  </ul>
               </li>
-             
           </ul>
-          
-    </div>
-    
+      </div>
   </div>
 </nav>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-ezr0VFM7bOXkAwGG2Os0Lq4k9L5oH+Vq+dz1V5eBWb8ECV4ulCqjNO1P4tDJETMl" crossorigin="anonymous">
+

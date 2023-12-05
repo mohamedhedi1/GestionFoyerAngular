@@ -1,9 +1,8 @@
-export class  Foyer {
-    idFoyer !:number;
-    universite !: string;
+export class Foyer {
+    idFoyer !: number;
     nomFoyer !: string;
     capaciteFoyer!: number;
-    
-    
+
+
 }
 
