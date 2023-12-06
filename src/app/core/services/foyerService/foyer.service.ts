@@ -31,7 +31,7 @@ export class FoyerService {
     return this.http.get<Foyer[]>(this.URL);
   }
   getFoyerByIdBloc(id: number) {
-    return this.http.get<Foyer>(`${this.URL}/nomFoyer/${id}`).pipe(
+    return this.http.get<Foyer>(`${this.URL}/bloc/${id}`).pipe(
       catchError(error => {
         console.error('Error fetching nom by ID:', error);
         return throwError(error);

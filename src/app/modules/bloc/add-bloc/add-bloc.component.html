@@ -19,21 +19,31 @@
                           <form #addForm='ngForm' (ngSubmit)="add(addForm)">
                             <div class="form-group">
                               <label for="foyer">Foyer</label>
-                              <select class="form-control" id="foyer" name="foyer" ngModel #fn="ngModel">
+                              <select class="form-control" id="foyer" name="foyer" ngModel #fn="ngModel" required>
+                                <option value="" disabled selected>choisir un foyer</option>
                                 <option *ngFor="let foyer of foyers" [value]="foyer.idFoyer">
                                   {{ foyer.nomFoyer }}
                                 </option>
                               </select>
+                              <div *ngIf="fn.invalid && (fn.dirty || fn.touched)">
+                                <div class="text-danger" *ngIf="fn.errors?.['required']">choisissez une option.</div>
+                              </div>
                             </div>
                             <div class="form-group">
                               <label for="nom">Nom Bloc :</label>
-                              <input type="text" class="form-control" id="nom" name="nom" ngModel #fn="ngModel" required
-                                placeholder="Tapez le nom" autocomplete="off">
+                              <input type="text" class="form-control" id="nom" name="nom" ngModel #nom="ngModel"
+                                required pattern="[a-zA-Z]{3,}" autocomplete="off">
+                              <div class="text-danger" *ngIf="nom.invalid && nom.touched">Le nom est requis et doit
+                                contenir au moins 3 lettres.</div>
                             </div>
                             <div class="form-group">
                               <label for="capacite">Capacité Bloc :</label>
                               <input type="number" class="form-control" id="capacite" name="capacite" ngModel
-                                #fn="ngModel" required placeholder="Capacité">
+                                #capacite="ngModel" required [max]="max" placeholder="Capacité">
+                              <div *ngIf="capacite.invalid && (capacite.dirty || capacite.touched)">
+                                <div class="text-danger" *ngIf="capacite.errors?.['required']">La capacité est requise.
+                                </div>
+                              </div>
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                           </form>

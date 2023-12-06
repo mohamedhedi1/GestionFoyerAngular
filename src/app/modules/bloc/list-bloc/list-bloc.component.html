@@ -39,6 +39,7 @@
                           <thead>
                             <tr>
                               <th>#</th>
+                              <th>ID Bloc</th>
                               <th>Nom Bloc</th>
                               <th>Capacité </th>
                               <th>Chambres</th>
@@ -48,6 +49,7 @@
                           <tbody>
                             <tr *ngFor="let bloc of blocs; let i = index">
                               <th scope="row">{{ i + 1 }}</th>
+                              <td>{{bloc.idBloc}}</td>
                               <td>{{bloc.nomBloc}}</td>
                               <td>{{bloc.capaciteBloc}}</td>
                               <td></td>

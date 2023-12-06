@@ -34,8 +34,8 @@ export class BlocService {
     return this.http.get<Bloc[]>(this.URL);
   }
 
-  updateBloc(bloc: Bloc) {
-    return this.http.put(this.URL + '/updateBloc', bloc, this.httpOptions);
+  updateBloc(bloc: Bloc, idfoyer: number) {
+    return this.http.put(`${this.URL}/updateBloc/${idfoyer}`, bloc, this.httpOptions);
   }
 
   deleteBloc(id: number) {

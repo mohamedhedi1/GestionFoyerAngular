@@ -13,6 +13,8 @@ import { FoyerService } from 'src/app/core/services/foyerService/foyer.service';
 })
 export class ListBlocComponent implements OnInit {
   blocs: Bloc[] = [];
+  foyers: Foyer[] = [];
+  max: number = 50;
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -29,6 +31,15 @@ export class ListBlocComponent implements OnInit {
       },
       (error: any) => {
         console.error('Error fetching blocs:', error);
+      }
+    );
+    this.foyerService.getall().subscribe(
+      (foyers: Foyer[]) => {
+        console.log(foyers);
+        this.foyers = foyers;
+      },
+      (error: any) => {
+        console.error('Error fetching foyers:', error);
       }
     );
   }

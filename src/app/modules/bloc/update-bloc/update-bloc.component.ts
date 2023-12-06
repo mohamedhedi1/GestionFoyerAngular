@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Bloc } from 'src/app/core/models/bloc';
 import { BlocService } from 'src/app/core/services/blocService/bloc.service';
+import { Foyer } from 'src/app/core/models/foyer';
+import { FoyerService } from 'src/app/core/services/foyerService/foyer.service';
 
 @Component({
   selector: 'app-update-bloc',
@@ -10,16 +12,18 @@ import { BlocService } from 'src/app/core/services/blocService/bloc.service';
   styleUrls: ['./update-bloc.component.css']
 })
 export class UpdateBlocComponent implements OnInit {
-  data: Bloc[] = [];
+  foyers: Foyer[] = [];
   id!: number;
   bloc!: Bloc;
   updateForm!: FormGroup;
+  idFoyer: number = 0;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private formB: FormBuilder,
     private blocService: BlocService,
+    private foyerService: FoyerService
   ) { }
 
   ngOnInit() {
@@ -30,32 +34,33 @@ export class UpdateBlocComponent implements OnInit {
           this.bloc = data;
           this.updateForm = this.formB.group({
             nomBloc: [""],
-            capaciteBloc: [""],
-            foyer: [1],
+            idFoyer: [""],
+            capaciteBloc: [""]
           });
           this.updateForm.patchValue(data);
         }
       );
     }
-    this.blocService.getAll().subscribe(
-      (data: Bloc[]) => {
-        console.log(data);
-        this.data = data;
+    this.foyerService.getall().subscribe(
+      (foyers: Foyer[]) => {
+        console.log(foyers);
+        this.foyers = foyers;
       },
       (error: any) => {
-        console.error('Error fetching blocs:', error);
+        console.error('Error fetching foyers:', error);
       }
     );
   }
 
   updateBloc() {
     this.bloc.idBloc = this.id;
+    this.idFoyer = this.updateForm.value.idFoyer;
     this.bloc.capaciteBloc = this.updateForm.value.capaciteBloc;
     this.bloc.nomBloc = this.updateForm.value.nomBloc;
-    this.blocService.updateBloc(this.bloc).subscribe(
+    this.blocService.updateBloc(this.bloc, this.idFoyer).subscribe(
       (response) => {
         alert('Bloc Updated Successfully!');
-        this.router.navigate(['mainBloc/listBloc']);
+        this.router.navigate(['/listBloc']);
       },
       (error) => {
         console.error('Update failed:', error);

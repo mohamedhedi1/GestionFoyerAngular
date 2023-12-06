@@ -18,15 +18,16 @@
                         <div class="col-md-6">
                           <form [formGroup]="updateForm" *ngIf="updateForm">
                             <div class="form-group">
-                              <label for="Foyer">Foyer</label>
-                              <select class="form-control" id="Bloc" name="Bloc">
-                                <option *ngFor="let bloc of data" [value]="bloc.idBloc">
-                                  {{ bloc.nomBloc }}
+                              <label for="foyer">Foyer</label>
+                              <select type="number" class="form-control" id="foyer" name="foyer"
+                                formControlName="idFoyer">
+                                <option *ngFor="let foyer of foyers" [value]="foyer.idFoyer">
+                                  {{ foyer.nomFoyer }}
                                 </option>
                               </select>
                             </div>
                             <div class="form-group">
-                              <label for="exampleInputEmail1">Nom Bloc :</label>
+                              <label for="nom">Nom Bloc :</label>
                               <input type="text" class="form-control" value="" id="nom" name="nom"
                                 formControlName="nomBloc" placeholder="Tapez le nom" autocomplete="off">
                             </div>

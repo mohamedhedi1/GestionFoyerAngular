@@ -14,6 +14,7 @@ import { FoyerService } from 'src/app/core/services/foyerService/foyer.service';
 export class AddBlocComponent implements OnInit {
   data: Bloc[] = [];
   foyers: Foyer[] = [];
+  max: number = 50;
   constructor(private blocService: BlocService, private foyerservice: FoyerService, private router: Router) { }
 
   ngOnInit() {
