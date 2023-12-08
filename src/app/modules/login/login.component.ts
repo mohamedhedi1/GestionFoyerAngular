@@ -39,7 +39,7 @@ export class LoginComponent {
              if(userData.role="ADMIN")
              {
               this.router.navigate(['/users']);
-             }else{
+             }else if (userData.role="ETUDIANT"){
               this.router.navigate(['/home']);
              }
 

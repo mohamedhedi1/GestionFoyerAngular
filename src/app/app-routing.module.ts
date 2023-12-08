@@ -6,6 +6,9 @@ import { HomeComponent } from './modules/home/home.component';
 import { AuthGuard } from './core/guards/authentification.guard';
 import { RoleGuard } from './core/guards/role-guard.guard';
 import { StudentGuard } from './core/guards/student-guard';
+import { ResetpasswordComponent } from './modules/resetpassword/resetpassword.component';
+import { NewpasswordComponent } from './modules/newpassword/newpassword.component';
+import { EmailsendedComponent } from './modules/emailsended/emailsended.component';
 
 
 const routes: Routes = [
@@ -17,6 +20,17 @@ const routes: Routes = [
     import('./modules/etudiant/etudiant.module').then(m=>m.EtudiantModule),canActivate: [AuthGuard,RoleGuard] },
     {
       path:"home",component: HomeComponent,canActivate: [AuthGuard,StudentGuard]
+    },
+    {
+      path: 'resetpassword',
+      component: ResetpasswordComponent
+    }, 
+    {
+      path : 'newpassword',
+      component : NewpasswordComponent
+    },
+    {
+      path : 'emailsended', component : EmailsendedComponent
     },
     { path: '**', component: NotFoundComponent },
 
