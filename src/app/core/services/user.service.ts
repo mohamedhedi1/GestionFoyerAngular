@@ -6,10 +6,14 @@ import { User } from '../models/user';
   providedIn: 'root'
 })
 export class UserService {
+
+ 
   URL="http://localhost:9090/users"
   URL2="http://localhost:9090/authenticate/register"
 
   constructor(private _http: HttpClient) { }
+
+ 
 
   getAllUsers():any
   {
@@ -33,6 +37,14 @@ export class UserService {
   {
     return this._http.get<User>(this.URL+"/UserByEmail/"+email)
   }
+  getUserById(id: number) {
+    return this._http.get<User>(this.URL+"/id/"+id);
+   }
+
+   updateUser(user: any) {
+    return this._http.put(this.URL,user)
+  }
+
   
 
 
