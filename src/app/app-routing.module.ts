@@ -33,6 +33,8 @@ const routes: Routes = [
       path : 'emailsended', component : EmailsendedComponent
     },
     { path: '**', component: NotFoundComponent },
+    {path : 'chambres', loadChildren:() => 
+import('./modules/chambre/chambre.module').then(m=>m.ChambreModule)}
 
 
   ];
