@@ -7,6 +7,9 @@ import { UpdateBlocComponent } from './update-bloc/update-bloc.component';
 import { ListBlocComponent } from './list-bloc/list-bloc.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { MatTableModule } from '@angular/material/table';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [AddBlocComponent, UpdateBlocComponent, ListBlocComponent],
@@ -16,6 +19,10 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatTableModule,
+    MatInputModule,
+    FormsModule,
+    MatIconModule
   ]
 })
 export class BlocModule { } 

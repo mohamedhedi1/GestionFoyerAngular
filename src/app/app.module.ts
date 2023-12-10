@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BlocModule } from './modules/bloc/bloc.module';
 import { SideBarComponent } from './side-bar/side-bar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { SideBarComponent } from './side-bar/side-bar.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BlocModule
+    BlocModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

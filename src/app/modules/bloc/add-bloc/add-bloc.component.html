@@ -39,7 +39,7 @@
                             <div class="form-group">
                               <label for="capacite">Capacité Bloc :</label>
                               <input type="number" class="form-control" id="capacite" name="capacite" ngModel
-                                #capacite="ngModel" required [max]="max" placeholder="Capacité">
+                                #capacite="ngModel" required [min]=0 placeholder="Capacité">
                               <div *ngIf="capacite.invalid && (capacite.dirty || capacite.touched)">
                                 <div class="text-danger" *ngIf="capacite.errors?.['required']">La capacité est requise.
                                 </div>

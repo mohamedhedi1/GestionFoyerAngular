@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Add your existing head content here -->
+</head>
+
 <body>
   <div class="pcoded-main-container">
     <div class="pcoded-wrapper">
@@ -9,7 +16,7 @@
                 <div class="col-sm-12">
                   <div class="card">
                     <div class="card-header">
-                      <h5>Basic Componant</h5>
+                      <h5>Basic Component</h5>
                     </div>
                     <div class="card-body">
                       <h5>Form controls</h5>
@@ -19,22 +26,41 @@
                           <form [formGroup]="updateForm" *ngIf="updateForm">
                             <div class="form-group">
                               <label for="foyer">Foyer</label>
-                              <select type="number" class="form-control" id="foyer" name="foyer"
-                                formControlName="idFoyer">
+                              <select class="form-control" id="foyer" name="foyer" formControlName="idFoyer">
+                                <option value="" disabled selected>choisir un nouveau foyer</option>
                                 <option *ngFor="let foyer of foyers" [value]="foyer.idFoyer">
                                   {{ foyer.nomFoyer }}
                                 </option>
                               </select>
+                              <div class="text-danger" *ngIf="hasError('idFoyer', 'required')">
+                                vouz devez selecter une option.
+                              </div>
                             </div>
                             <div class="form-group">
                               <label for="nom">Nom Bloc :</label>
-                              <input type="text" class="form-control" value="" id="nom" name="nom"
-                                formControlName="nomBloc" placeholder="Tapez le nom" autocomplete="off">
+                              <input type="text" class="form-control" id="nom" name="nom" formControlName="nomBloc"
+                                placeholder="Tapez le nom" autocomplete="off">
+
+                              <!-- Display error messages for 'nomBloc' control -->
+                              <div class="text-danger" *ngIf="hasError('nomBloc', 'required')">
+                                Name is required.
+                              </div>
+                              <div class="text-danger" *ngIf="hasError('nomBloc', 'minlength')">
+                                Name must be at least 3 characters.
+                              </div>
                             </div>
                             <div class="form-group">
                               <label for="capacite">Capacité Bloc :</label>
                               <input type="number" class="form-control" id="capacite" name="capacite"
                                 formControlName="capaciteBloc" placeholder="Capacité">
+
+                              <!-- Display error messages for 'capaciteBloc' control -->
+                              <div class="text-danger" *ngIf="hasError('capaciteBloc', 'required')">
+                                Capacity is required.
+                              </div>
+                              <div class="text-danger" *ngIf="hasError('capaciteBloc', 'min')">
+                                Capacity must be greater than 0.
+                              </div>
                             </div>
                             <button type="submit" (click)="updateBloc()" class="btn btn-primary">Submit</button>
                           </form>
@@ -54,3 +80,5 @@
   <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
   <script src="assets/js/pcoded.min.js"></script>
 </body>
+
+</html>
