@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Add your head content here -->
+</head>
+
+<body>
+
+    <!-- Pre-loader -->
+    <div class="loader-bg">
+        <div class="loader-track">
+            <div class="loader-fill"></div>
+        </div>
+    </div>
+
+    <!-- Navigation menu -->
+    <!-- Add your navigation menu here -->
+
+    <!-- Header -->
+    <!-- Add your header content here -->
+
+    <!-- Main Content -->
+    <section class="pcoded-main-container">
+        <div class="pcoded-wrapper">
+            <div class="pcoded-content">
+                <div class="pcoded-inner-content">
+                    <!-- Breadcrumb -->
+                    <div class="page-header">
+                        <div class="page-block">
+                            <div class="row align-items-center">
+                                <div class="col-md-12">
+                                    <div class="page-header-title">
+                                        <h5 class="m-b-10">Gestion foyer</h5>
+                                    </div>
+
+                                    <ul class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="index.html"><i
+                                                class="feather icon-home"></i></a></li>
+                                        <li class="breadcrumb-item"><a href="javascript:">Liste des foyers</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Main Content -->
+                    <div class="main-body">
+                        <div class="page-wrapper">
+                            <div class="row">
+                                <!-- Card -->
+                                <div class="col-xl-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5>Tableaux des reservations : </h5>
+                                        </div>
+
+                                        <div class="card-body">
+                                            <div class="table-responsive">
+                                                <table class="table table-hover">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>#</th>
+                                                            <th>Annee Universitaire</th>
+                                                            <th>Action</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <!-- Angular loop -->
+                                                        <tr *ngFor="let item of newData">
+                                                            <th scope="row" >{{item.idReservation}}</th>
+                                                            <td>{{item.anneeUniversitaire}}</td>
+                                                            <td>
+                                                                <button type="button"
+                                                                        class="btn btn-danger btn-sm rounded-0"
+                                                                        data-toggle="tooltip" data-placement="top"
+                                                                        title="Delete"
+                                                                        (click)="deleteFoyer(item.idReservation)">
+                                                                    <i class="fas fa-trash"></i>
+                                                                </button>
+                                                            </td>
+                                                            <td>
+                                                                <button type="button"
+                                                                        class="btn btn-primary btn-sm rounded-0"
+                                                                        data-toggle="tooltip" data-placement="top"
+                                                                        title="Extract PDF"
+                                                                        (click)="extractPdf(item.idReservation)">
+                                                                    Extract PDF
+                                                                </button>
+                                                            </td>
+                                                        </tr>
+                                                        <!-- End Angular loop -->
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Card -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Required Js -->
+    <script src="assets/js/vendor-all.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/pcoded.min.js"></script>
+</body>
+
+</html>
