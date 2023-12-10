@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Add your head content here -->
+</head>
+
+<body>
+  
+    <!-- [ Pre-loader ] start -->
+    <div class="loader-bg">
+        <div class="loader-track">
+            <div class="loader-fill"></div>
+        </div>
+    </div>
+    <!-- [ Pre-loader ] End -->
+
+    <!-- [ navigation menu ] start -->
+    <!-- [ navigation menu ] end -->
+
+    <!-- [ Header ] end -->
+
+    <!-- [ Main Content ] start -->
+    <section class="pcoded-main-container">
+        <div class="pcoded-wrapper">
+            <div class="pcoded-content">
+                <div class="pcoded-inner-content">
+                    <!-- [ breadcrumb ] start -->
+                    <div class="page-header">
+                        <div class="page-block">
+                            <div class="row align-items-center">
+                                <div class="col-md-12">
+                                    <div class="page-header-title">
+                                        <h5 class="m-b-10">Gestion foyer</h5>
+                                    </div>
+                                    
+                                    <ul class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="index.html"><i
+                                                class="feather icon-home"></i></a></li>
+
+                                    
+                                        <li class="breadcrumb-item"><a href="javascript:">Liste des foyers</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- [ Info Box ] start -->
+
+<!-- [ Info Box ] end -->
+
+                    <!-- [ breadcrumb ] end -->
+               
+
+                    <!-- [ Main Content ] start -->
+                    <div class="main-body">
+                        <div class="page-wrapper">
+                            <!-- [ Main Content ] start -->
+                            <div class="row">
+                                <!-- [ Hover-table ] start -->
+                                <div class="col-xl-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5>Tableaux des foyers : </h5>
+                                        </div>
+                                      
+                                        <div class="card-block table-border-style">
+                                            <div class="table-responsive">
+                                               
+                                                <table class="table table-hover">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>#</th>
+                                                            <th>Nom Foyer</th>
+                                                            <th>Capacité </th>
+                                                   
+                                                            <th>Action</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <!-- Add your Angular loop here -->
+                                                        <tr *ngFor="let item of data; let i = index">
+                                                            <th scope="row">{{item.idFoyer}}</th>
+                                                            <td>{{item.nomFoyer}}</td>
+                                                            <td>{{item.capaciteFoyer}}</td>
+                                                            <td>
+                                                                <li class="list-inline-item">
+                                                                    <button type="button"
+                                                                            class="btn btn-success btn-sm rounded-0"
+                                                                            data-toggle="tooltip" data-placement="top"
+                                                                            title="Edit"
+                                                                            [routerLink]="['updateFoyer', item.idFoyer]">
+                                                                        <i class="fa fa-edit"></i> 
+                                                                    </button>
+                                                                </li>
+                                                                <li class="list-inline-item">
+                                                                    <button type="button"
+                                                                            class="btn btn-danger btn-sm rounded-0"
+                                                                            data-toggle="tooltip" data-placement="top"
+                                                                            title="Delete"
+                                                                            (click)="deleteFoyer(item.idFoyer)">
+                                                                        <i class="fas fa-trash"></i> 
+                                                                    </button>
+                                                                </li>
+                                                            </td>
+                                                           
+                                                        </tr>
+                                                        <!-- End Angular loop -->
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- [ Hover-table ] end -->
+                            </div>
+                            <!-- [ Main Content ] end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  
+
+    <!-- Required Js -->
+    <script src="assets/js/vendor-all.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/pcoded.min.js"></script>
+</body>
+
+</html>

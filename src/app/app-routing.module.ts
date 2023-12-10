@@ -34,6 +34,10 @@ const routes: Routes = [
       import('./modules/universite/universite.module').then(m => m.UniversiteModule)
   },
   {
+    path: 'mainFoyer', loadChildren: () =>
+      import('./modules/foyer/foyer.module').then(m => m.FoyerModule)
+  },
+  {
     path: "home", component: HomeComponent, canActivate: [AuthGuard, StudentGuard], children: [{ path: "reservation", component: ReservationComponent }]
   },
 
@@ -47,8 +51,6 @@ const routes: Routes = [
     path: "reserver/:id", component: ReservationChambreComponent, canActivate: [AuthGuard, StudentGuard]
   },
   { path: '**', component: NotFoundComponent },
-
-
 
 
 

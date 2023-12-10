@@ -7,7 +7,6 @@ import { SideBarComponent } from './side-bar/side-bar.component';
 import { UniversiteModule } from './modules/universite/universite.module';
 
 import { BlocModule } from './modules/bloc/bloc.module';
-import { SideBarComponent } from './side-bar/side-bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { LoginComponent } from './modules/login/login.component';
@@ -15,10 +14,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EtudiantModule } from './modules/etudiant/etudiant.module';
 import { NotFoundComponent } from './modules/not-found/not-found.component';
 import { UserModule } from './modules/user/user.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './modules/navbar/navbar.component';
-import { SidebarComponent } from './modules/sidebar/sidebar.component';
+
 import { HomeComponent } from './Front/home/home.component';
 import { ReservationComponent } from './Front/reservation/reservation.component';
 import { ProfileComponent } from './Front/profile/profile.component';
@@ -35,7 +33,6 @@ import { FrontHeaderComponent } from './Front/FrontHeader/FrontHeader.component'
 @NgModule({
   declarations: [
     AppComponent,
-
     LoginComponent,
     NotFoundComponent,
     HomeComponent,
@@ -49,7 +46,6 @@ import { FrontHeaderComponent } from './Front/FrontHeader/FrontHeader.component'
   imports: [
     BrowserModule,
     AppRoutingModule,
-
     BlocModule,
     BrowserAnimationsModule
     UserModule,
@@ -59,9 +55,8 @@ import { FrontHeaderComponent } from './Front/FrontHeader/FrontHeader.component'
     HttpClientModule,
     ReactiveFormsModule,
     CommonModule,
-
-    UniversiteModule
-
+    UniversiteModule,
+    FoyerModule
   ],
 
   providers: [],
