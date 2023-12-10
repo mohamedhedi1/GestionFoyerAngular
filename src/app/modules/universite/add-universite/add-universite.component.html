@@ -1,0 +1,78 @@
+<body>
+  <div class="pcoded-main-container">
+    <div class="pcoded-wrapper">
+        <div class="pcoded-content">
+            <div class="pcoded-inner-content">
+
+                <div class="main-body">
+                    <div class="page-wrapper">
+                        <!-- [ Main Content ] start -->
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5>Basic Componant</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5>Form controls</h5>
+                                        <hr>
+                                        <div class="row">
+                                          <div class="col-md-6">
+                                            <form #addForm='ngForm' (ngSubmit)="addUniversite(addForm)" novalidate>
+
+                                                <div class="form-group">
+                                                    <label for="nomUniversite">Nom Université :</label>
+                                                    <input type="text" class="form-control" id="nomUniversite" name="nomUniversite" ngModel #fn="ngModel" required minlength="3" placeholder="Tapez le nom de l'université">
+                                                    <div *ngIf="addForm.controls['nomUniversite'].invalid && (addForm.controls['nomUniversite'].dirty || addForm.controls['nomUniversite'].touched)" class="text-danger">
+                                                      <div *ngIf="addForm.controls['nomUniversite']?.hasError('required')">Le nom de l'université est requis.</div>
+                                                      <div *ngIf="addForm.controls['nomUniversite']?.hasError('minlength')">Le nom de l'université doit comporter au moins 3 caractères.</div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="adresse">Adresse :</label>
+                                                    <input type="text" class="form-control" id="adresse" name="adresse" ngModel #fn="ngModel" required minlength="3" placeholder="Adresse">
+                                                    <div *ngIf="addForm.controls['adresse'].invalid && (addForm.controls['adresse'].dirty || addForm.controls['adresse'].touched)" class="text-danger">
+                                                        <div *ngIf="addForm.controls['adresse']?.hasError('required')">L'adresse est requise.</div>
+                                                        <div *ngIf="addForm.controls['adresse']?.hasError('minlength')">L'adresse doit comporter au moins 3 caractères.</div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="nomFoyer">Nom Foyer :</label>
+                                                    <select class="form-control" id="nomFoyer" name="nomFoyer" ngModel required>
+                                                        <option [value]="item.id" *ngFor="let item of items">{{item.nom}}</option>
+                                                    </select>
+                                                    <div *ngIf="addForm.controls['nomFoyer'].invalid && addForm.controls['nomFoyer'].touched" class="text-danger">
+                                                        Le nom du foyer est requis.
+                                                    </div>
+                                                </div>
+
+                                                <button type="submit" class="btn btn-primary" [disabled]="addForm.invalid">Submit</button>
+                                            </form>
+                                        </div>
+
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- Input group -->
+                            </div>
+                        </div>
+                        <!-- [ Main Content ] end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="assets/js/vendor-all.min.js"></script>
+<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/js/pcoded.min.js"></script>
+
+</body>
+
+
+
