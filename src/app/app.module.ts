@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FoyerModule } from './modules/foyer/foyer.module';
+import { SideBarComponent } from './side-bar/side-bar.component';
+import { UniversiteModule } from './modules/universite/universite.module';
 
 import { BlocModule } from './modules/bloc/bloc.module';
 import { SideBarComponent } from './side-bar/side-bar.component';
@@ -32,6 +35,7 @@ import { FrontHeaderComponent } from './Front/FrontHeader/FrontHeader.component'
 @NgModule({
   declarations: [
     AppComponent,
+
     LoginComponent,
     NotFoundComponent,
     HomeComponent,
@@ -40,10 +44,12 @@ import { FrontHeaderComponent } from './Front/FrontHeader/FrontHeader.component'
     ReservationChambreComponent,
     ListReservationComponent,
     FrontHeaderComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+
     BlocModule,
     BrowserAnimationsModule
     UserModule,
@@ -53,6 +59,9 @@ import { FrontHeaderComponent } from './Front/FrontHeader/FrontHeader.component'
     HttpClientModule,
     ReactiveFormsModule,
     CommonModule,
+
+    UniversiteModule
+
   ],
 
   providers: [],

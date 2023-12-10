@@ -30,6 +30,10 @@ const routes: Routes = [
       import('./modules/etudiant/etudiant.module').then(m => m.EtudiantModule), canActivate: [AuthGuard, RoleGuard]
   },
   {
+    path: 'mainUniversite', loadChildren: () =>
+      import('./modules/universite/universite.module').then(m => m.UniversiteModule)
+  },
+  {
     path: "home", component: HomeComponent, canActivate: [AuthGuard, StudentGuard], children: [{ path: "reservation", component: ReservationComponent }]
   },
 
@@ -43,6 +47,9 @@ const routes: Routes = [
     path: "reserver/:id", component: ReservationChambreComponent, canActivate: [AuthGuard, StudentGuard]
   },
   { path: '**', component: NotFoundComponent },
+
+
+
 
 
 ];
