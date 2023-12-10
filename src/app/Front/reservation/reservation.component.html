@@ -1,0 +1,46 @@
+<!-- ... (your header code) ... -->
+
+<section class="py-5">
+  <div class="container px-4 px-lg-5 mt-5">
+    <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-4 justify-content-center">
+      <!-- Loop through foyers and create a card for each -->
+      <div class="col mb-5" *ngFor="let foyer of universites">
+        <div class="card h-100 border-0">
+          <!-- Product image -->
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/University-of-Alabama-EngineeringResearchCenter-01.jpg" alt="Foyer Image" class="card-img-top rounded" />
+
+          <!-- Product details -->
+          <div class="card-body p-4">
+            <h5 class="card-title mb-3"><strong>Nom Foyer :</strong>{{foyer.foyer.nomFoyer}}</h5>
+            <p class="card-text"><strong>Nom Universite :</strong>{{foyer.nomUniversite}}</p>
+
+            <!-- Description -->
+            <p class="card-text"><strong>Description :</strong> Découvrez l'atmosphère chaleureuse de notre foyer, un lieu accueillant conçu pour offrir confort et convivialité. Profitez d'un espace propice à l'apprentissage et à la détente, où chaque détail est pensé pour répondre à vos besoins. Notre foyer, situé à {{foyer.adresse}}, offre une capacité d'accueil de {{foyer.foyer.capaciteFoyer}}, vous permettant de vivre une expérience unique au cœur de {{foyer.nomUniversite}}. Nous sommes impatients de vous accueillir et de vous offrir une expérience inoubliable.</p>
+
+            <!-- Adresse -->
+            <p class="card-text"><strong>Adresse du Foyer : </strong>{{foyer.adresse}}</p>
+
+            <!-- Capacite Foyer -->
+            <p class="card-text"><strong>Capacité:</strong> {{foyer.foyer.capaciteFoyer}}</p>
+
+            <!-- Rating or Ranking -->
+            <div class="rating">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+            </div>
+          </div>
+          <!-- Product actions -->
+          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+            <div class="text-center">
+              <!-- Learn More Button -->
+              <a class="btn btn-outline-dark mt-auto" target="_blank" routerLink="/reserver/{{foyer.foyer.idFoyer}}">Réserver</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

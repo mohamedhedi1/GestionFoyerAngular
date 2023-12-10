@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+      background-color: #343a40; /* Dark background color */
+    }
+
+    .navbar-brand,
+    .nav-link,
+    .dropdown-toggle {
+      color: white !important;
+    }
+
+    .navbar-brand img {
+      height: 25px; /* Adjust the height as needed */
+      margin: 10px;
+    }
+
+    .navbar-brand:hover,
+    .nav-link:hover,
+    .dropdown-toggle:hover {
+      background-color: #555; /* Darker background on hover */
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      right: 0;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .welcome-section {
+      background: url('https://www.educationunlimited.com/blog/wp-content/uploads/2019/08/Webp.net-compress-image.jpg') center/cover no-repeat;
+      padding: 150px 0;
+      color: #db7f7f;
+      text-align: center;
+      position: relative;
+    }
+
+    .welcome-card {
+      background-color: #060c13;
+      padding: 20px;
+      border-radius: 10px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .welcome-section h1 {
+      font-size: 3em;
+    }
+
+    .reservation-section {
+      padding: 50px 0;
+    }
+
+    footer {
+      background-color: darkslategray;
+      color: white;
+      padding: 20px 0;
+    }
+
+    footer a {
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand navbar-light bg-dark">
+    <a class="navbar-brand" href="#">
+      <img src="https://www.pngplay.com/wp-content/uploads/12/Clipart-House-PNG-Clipart-Background.png" alt="Logo">
+    </a>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#list">Liste des foyers</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="navbar-nav">
+      <div class="dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Haythem Mekki
+        </a>
+        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" routerLink="/profile"><i class="fas fa-cogs"></i> Update Profile</a>
+          <a class="dropdown-item" routerLink="/listReservation"><i class="fas fa-envelope"></i> List of Reservations</a>
+          <a class="dropdown-item" href="#logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="welcome-section">
+    <div class="container welcome-card">
+      <h1 class="display-4 fw-bolder">Bienvenue, Monsieur {{user.lastname}} {{user.firstname}}</h1>
+      <p class="lead fw-normal text-white-50 mb-0">Bienvenue sur notre site dédié aux foyers et réservations. Nous sommes ravis de vous accueillir sur cette plateforme qui vous permettra de découvrir une liste variée de foyers disponibles et de faciliter la réservation de votre choix. Explorez notre sélection et profitez d'une expérience unique dans la recherche et la réservation de foyers pour vos besoins spécifiques. Bonne découverte!</p>
+    </div>
+  </div>
+
+  <div class="container reservation-section">
+    <!-- Your reservation content goes here -->
+  </div>
+  <div id="list">
+    <app-reservation></app-reservation>
+  </div>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h5>Contact Us</h5>
+          <p>Email: info@example.com</p>
+          <p>Phone: +123 456 7890</p>
+        </div>
+        <div class="col-md-4">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Liste des foyers</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5>Connect With Us</h5>
+          <p>Follow us on social media:</p>
+          <!-- Add your social media icons or links here -->
+          <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

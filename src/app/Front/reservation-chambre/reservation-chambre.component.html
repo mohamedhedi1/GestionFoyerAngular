@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Your Smooth Form</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <style>
+        body {
+            background: url('https://www.careeraddict.com/uploads/article/56105/cambridge-university-exterior-england.jpg') center center fixed;
+            background-size: cover;
+            background-color: rgba(255, 255, 255, 0.9); /* Adjust opacity here */
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 400px; /* Adjust the width as needed */
+            max-width: 90%;
+            text-align: center;
+        }
+
+        .card-header {
+            background-color: darkslategray;
+            color: #fff;
+            border-radius: 10px 10px 0 0;
+            padding: 10px 0;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        select.form-control {
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            transition: border-color 0.2s;
+        }
+
+        select.form-control:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        }
+
+        button.btn-primary {
+            background-color: darkslategray;
+            border: 1px solid black;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button.btn-primary:hover {
+            background-color: darkslategray;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <div class="card-header">
+            <h3>Reservation Form</h3>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="updateForm" *ngIf="updateForm">
+                <label for="select">Liste des chambres disponibles :</label>
+                <select class="form-control" id="select" name="select" formControlName="select">
+                    <option *ngFor="let chamber of array" [value]="chamber.idChambre">{{ chamber.idChambre+"-"+ chamber.typeC }}</option>
+                </select>
+                <button class="btn btn-primary" (click)="reserver(updateForm)">Reserve Now</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

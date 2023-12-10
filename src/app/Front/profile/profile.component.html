@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Datta Able Free Bootstrap 4 Admin Template</title>
+    <!-- HTML5 Shim and Respond.js IE10 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 10]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Datta Able Bootstrap admin template made using Bootstrap 4 and it has huge amount of ready made feature, UI components, pages which completely fulfills any dashboard needs." />
+    <meta name="keywords" content="admin templates, bootstrap admin templates, bootstrap 4, dashboard, dashboard templets, sass admin templets, html admin templates, responsive, bootstrap admin templates free download,premium bootstrap admin templates, datta able, datta able bootstrap admin template, free admin theme, free dashboard template"/>
+    <meta name="author" content="CodedThemes"/>
+
+    <!-- Favicon icon -->
+    <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
+    <!-- fontawesome icon -->
+    <link rel="stylesheet" href="/assets/fonts/fontawesome/css/fontawesome-all.min.css">
+    <!-- animation css -->
+    <link rel="stylesheet" href="/assets/plugins/animation/css/animate.min.css">
+    <!-- vendor css -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+
+</head>
+
+<body>
+  
+    <!-- [ Pre-loader ] start -->
+    <div class="loader-bg">
+        <div class="loader-track">
+            <div class="loader-fill"></div>
+        </div>
+    </div>
+    <div class="pcoded-main-container">
+        <div class="pcoded-wrapper">
+            <div class="pcoded-content">
+                <div class="pcoded-inner-content">
+                    <!-- [ breadcrumb ] start -->
+                    
+                    <!-- [ breadcrumb ] end -->
+                    <div class="main-body">
+                        <div class="page-wrapper">
+                            <!-- [ Main Content ] start -->
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5>Profile</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <form [formGroup]="updateForm" *ngIf="updateForm" >
+                                                        
+                                                        <div class="form-group" >
+                                                          <label for="email">Email address</label>
+                                                          <input type="text" class="form-control" value="{{b.email}}" placeholder="Enter email" disabled >
+                                                        </div>
+                                                        <div class="form-group">
+                                                          <label for="nomE">Nom</label>
+                                                          <input type="text" class="form-control" id="nomEt" formControlName="nomEt" placeholder="Nom" required>
+                                                        </div>
+                                                        <div class="form-group">
+                                                          <label for="prenomEt">Prénom</label>
+                                                          <input type="text" class="form-control" id="prenomEt" formControlName="prenomEt" placeholder="Prénom" required>
+                                                        </div>
+                                                        <div class="form-group">
+                                                          <label for="cin">Cin</label>
+                                                          <input type="text" class="form-control" id="cin" formControlName="cin" placeholder="Cin" required>
+                                                        </div>
+                                                        <div class="form-group">
+                                                          <label for="ecole">Ecole</label>
+                                                          <input type="text" class="form-control" id="ecole" formControlName="ecole" placeholder="Ecole">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="dateNaissance">Date of Birth</label>
+                                                            <input type="date" class="form-control" id="dateNaissance" formControlName="dateNaissance" placeholder="Date of Birth">
+                                                          </div>
+                                                        <button type="submit" class="btn btn-primary" (click)="add(updateForm)">Submit</button>
+                                                      </form>
+                                                      
+                                                </div>
+                                               
+                                            </div>
+                                       
+                                        </div>
+                                    </div>
+                                    <!-- Input group -->
+                                    
+                                </div>
+                            </div>
+                            <!-- [ Main Content ] end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+<script src="/assets/js/vendor-all.min.js"></script>
+	<script src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/assets/js/pcoded.min.js"></script>
+
+</body>
+</html>
