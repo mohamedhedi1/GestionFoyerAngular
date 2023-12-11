@@ -1,0 +1,88 @@
+<app-sidebar></app-sidebar>
+<app-navbar></app-navbar> 
+
+
+
+<div class="pcoded-main-container">
+    <div class="pcoded-wrapper">
+        <div class="pcoded-content">
+            <div class="pcoded-inner-content">
+
+
+
+
+                <div class="row">
+                    <div class="col-sm-12">
+                                <div class="card">
+                                                <div class="card-header">
+                                                    <h5>Etudiant Form</h5>
+                                                </div>
+                                                <div class="card-body">
+                                                
+                                                    <hr>
+                                                              <div class="row">
+                                                                  <div class="col-md-6">
+                                                                      
+                                                                            <form  [formGroup]="myForm" (ngSubmit)="onSubmit()">
+                                                                      <div class="form-group">
+                                                                        <label for="nomEt">Nom</label>
+                                                                        <input type="text" class="form-control" id="nomEt" formControlName="nomEt"  pattern="[A-Za-z]+" required placeholder="Ex. Hamdi">
+                                                                    <div *ngIf="myForm.get('nomEt')?.invalid && (myForm.get('nomEt')?.dirty || myForm.get('nomEt')?.touched)">
+                                                                          <span class="error-message">Nom doit contenir seulement des lettres majuscules et minuscules.</span>
+                                                                        </div> 
+                                                                      </div>
+                                                                    
+                                                                      <div class="form-group">
+                                                                        <label for="prenomEt">Prenom</label>
+                                                                        <input type="text" class="form-control" id="prenomEt" formControlName="prenomEt"  pattern="[A-Za-z]+" required placeholder="Ex. Hedi">
+                                                                       <div *ngIf="myForm.get('prenomEt')?.invalid && (myForm.get('prenomEt')?.dirty || myForm.get('prenomEt')?.touched)">
+                                                                          <span class="error-message"> Prenom doit contenir seulement des lettres majuscules et minuscules.</span>
+                                                                        </div>
+                                                                      </div>
+                                                                    
+                                                                      <div class="form-group">
+                                                                        <label for="cin">Cin</label>
+                                                                        <input type="number" class="form-control" id="cin" formControlName="cin"  pattern="[0-9]{8}" required placeholder="Ex. 12345678">
+                                                                       <div *ngIf="myForm.get('cin')?.invalid && (myForm.get('cin')?.dirty || myForm.get('cin')?.touched)">
+                                                                          <span class="error-message">Cin doit contenir 8 chiffres positifs.</span>
+                                                                        </div>
+                                                                      </div>
+                                                                    
+                                                                      <div class="form-group">
+                                                                        <label for="email">Email</label>
+                                                                        <input type="email" class="form-control" id="email" formControlName="email" placeholder="Ex. mohamed.hedi7@gmail.com">
+                                                                        <div *ngIf="myForm.get('email')?.invalid && (myForm.get('email')?.dirty || myForm.get('email')?.touched)">
+                                                                          <span class="error-message"> Email doit etre de la forme xyz@xy.z .</span>
+                                                                        </div>
+                                                                      </div>
+                                                                    
+                                                                      <div class="form-group">
+                                                                        <label for="ecole">Ecole</label>
+                                                                        <input type="text" class="form-control" id="ecole" formControlName="ecole" placeholder="Ex. Esprit">
+                                                                        <div *ngIf="myForm.get('ecole')?.invalid && (myForm.get('ecole')?.dirty || myForm.get('ecole')?.touched)">
+                                                                          <span class="error-message"> Ecole doit contenir seulement des lettres majuscules et minuscules.</span>
+                                                                        </div>
+                                                                      </div>
+                                                                    
+                                                                      <div class="form-group">
+                                                                        <label for="dateNaissance">Date Naissance</label>
+                                                                        <input type="date" class="form-control" id="dateNaissance" formControlName="dateNaissance">
+                                                                        <div *ngIf="myForm.get('dateNaissance')?.hasError('dateNaissanceInvalid')">
+                                                                          <span class="error-message">La date de naissance invalide, l'age est moins de 18 ans.</span>
+                                                                        </div>
+                                                                      </div>
+                                                                    
+                                                                      <button type="submit" class="btn btn-primary" [disabled]="myForm.invalid">Ajouter</button>
+                                                                            </form>
+                                                                  </div>
+                                                              </div>
+                                                </div>
+                                </div>
+                    </div>
+                </div>
+               
+
+</div>
+</div>
+</div>
+</div>

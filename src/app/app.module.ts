@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,6 +9,9 @@ import { UniversiteModule } from './modules/universite/universite.module';
 
 import { BlocModule } from './modules/bloc/bloc.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
+import { ChambreModule } from './modules/chambre/chambre.module';
 
 import { LoginComponent } from './modules/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -24,6 +28,18 @@ import { ReservationChambreComponent } from './front/reservation-chambre/reserva
 import { CommonModule } from '@angular/common';
 import { ListReservationComponent } from './Front/listReservation/listReservation.component';
 import { FrontHeaderComponent } from './Front/FrontHeader/FrontHeader.component';
+import { EmailsendedComponent } from './modules/emailsended/emailsended.component';
+import { NewpasswordComponent } from './modules/newpassword/newpassword.component';
+import { ResetpasswordComponent } from './modules/resetpassword/resetpassword.component';
+
+
+
+
+
+
+
+import { SidebarComponent } from './modules/sidebar/sidebar.component';
+
 
 
 
@@ -42,12 +58,21 @@ import { FrontHeaderComponent } from './Front/FrontHeader/FrontHeader.component'
     ListReservationComponent,
     FrontHeaderComponent,
 
+    ResetpasswordComponent,
+    NewpasswordComponent,
+    EmailsendedComponent,
+
+
+
+
   ],
   imports: [
+
+
     BrowserModule,
     AppRoutingModule,
     BlocModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
     UserModule,
     EtudiantModule,
     FormsModule,
@@ -56,7 +81,9 @@ import { FrontHeaderComponent } from './Front/FrontHeader/FrontHeader.component'
     ReactiveFormsModule,
     CommonModule,
     UniversiteModule,
-    FoyerModule
+    FoyerModule,
+    ChambreModule
+
   ],
 
   providers: [],
