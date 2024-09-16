@@ -1,0 +1,75 @@
+<app-sidebar></app-sidebar>
+<app-navbar></app-navbar> 
+
+
+<div class="pcoded-main-container">
+    <div class="pcoded-wrapper">
+        <div class="pcoded-content">
+            <div class="pcoded-inner-content">
+
+
+
+
+
+
+<div class="row">
+    <div class="col-sm-12">
+                <div class="card">
+                                <div class="card-header">
+                                    <h5>Admin Form</h5>
+                                </div>
+                                <div class="card-body">
+                                
+                                    <hr>
+                                              <div class="row">
+                                                  <div class="col-md-6">
+                                                      
+                                                            <form  [formGroup]="myForm" (ngSubmit)="onSubmit()">
+                                                      <div class="form-group">
+                                                        <label for="firstname">Prenom</label>
+                                                        <input type="text" class="form-control" id="firstname" formControlName="firstname"  pattern="[A-Za-z]+" required placeholder="Ex. Hamdi">
+                                                    <div *ngIf="myForm.get('firstname')?.invalid && (myForm.get('firstname')?.dirty || myForm.get('firstname')?.touched)">
+                                                          <span class="error-message">Prenom doit contenir seulement des lettres majuscules et minuscules.</span>
+                                                        </div> 
+                                                      </div>
+                                                    
+                                                      <div class="form-group">
+                                                        <label for="lastname">Nom</label>
+                                                        <input type="text" class="form-control" id="lastname" formControlName="lastname"  pattern="[A-Za-z]+" required placeholder="Ex. Hedi">
+                                                       <div *ngIf="myForm.get('lastname')?.invalid && (myForm.get('lastname')?.dirty || myForm.get('lastname')?.touched)">
+                                                          <span class="error-message"> Nom doit contenir seulement des lettres majuscules et minuscules.</span>
+                                                        </div>
+                                                      </div>
+                                                   
+                                                    
+                                                      <div class="form-group">
+                                                        <label for="email">Email</label>
+                                                        <input type="email" class="form-control" id="email" formControlName="email" placeholder="Ex. mohamed.hedi7@gmail.com">
+                                                        <div *ngIf="myForm.get('email')?.invalid && (myForm.get('email')?.dirty || myForm.get('email')?.touched)">
+                                                          <span class="error-message"> Email doit etre de la forme xyz@xy.z .</span>
+                                                        </div>
+                                                      </div>
+                                                    <!--
+                                                      <div class="form-group">
+                                                        <label for="password">Mot de passe</label>
+                                                        <input type="password" class="form-control" id="password" formControlName="password">
+                                                        <div *ngIf="myForm.get('password')?.invalid && (myForm.get('password')?.dirty || myForm.get('password')?.touched)">
+                                                          <span class="error-message"> Password doit contenir des lettres majuscules, minuscules et spécial et chiffre et de longeur 8 .</span>
+                                                        </div>
+                                                      </div>-->
+                                                    
+                                                     
+                                                    
+                                                      <button type="submit" class="btn btn-primary" [disabled]="myForm.invalid">Modifier</button>
+                                                            </form>
+                                                  </div>
+                                              </div>
+                                </div>
+                </div>
+    </div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
